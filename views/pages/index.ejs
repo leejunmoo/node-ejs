@@ -11,7 +11,39 @@
     <nav>
         <a href="/">home</a>
         <a href="/about">about</a>
+        <a href="/detail">Coffee</a>
     </nav>
-    <h1>홈페이지</h1>
+    <h1><%= title %> </h1>
+    
+    <!-- ejs 라고 치면 자동완성됨 %%> 는 값을 처리만함 표시는x / 
+         %= 는 안에적힌 결과를 바로출력함 -->
+    
+         
+    <!-- ejs 문안에 js문중 반복문이나 if문 같은건 @@ %> @@ 이 문법을 안쪽에다 적어줘야 실행됨 -->     
+
+    <% 1+1 %> 
+    <p><%= 5*2 %></p>
+
+    <!-- 반복문 -->
+    <% for(let i =0; i < 5; i++) { %>
+        <p>출력된 html<%= i %> </p> 
+    <% } %> 
+
+    <!-- get 방식 전송 -->
+    <form action="/create" method="get">
+        <label for="name">name: </label>
+        <input type="text" id="name" name="name">
+        <button type="submit">전송</button>
+    </form>
+    
+
+    <h1>커피 제품 보기</h1>
+    <form action="/coffee" method="get">
+        <label for="name">coffee name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">전송</button>
+    </form>
+
+    
 </body>
 </html>
